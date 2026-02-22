@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📘 SmartDocs AI – Intelligent Multi-Document Q&A System
 
 A full-stack Retrieval-Augmented Generation (RAG) application that enables users to upload multiple PDF documents and ask intelligent, context-aware questions with source attribution.
@@ -380,3 +381,6 @@ For questions, issues, or feature requests:
 - Review logs for debugging information  
 
 Thank you for using SmartDocs AI 🚀
+=======
+# SmartDocs-AI
+>>>>>>> 2235ffdd275d0dc09549460392733c7bd8d039de
