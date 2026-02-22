@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 1. Global Transitions */
+/* Ensures that switching themes doesn't feel jarring */
+* {
+  @apply transition-colors duration-200;
+}
+
+@layer base {
+  body {
+    /* Default: Light Mode */
+    @apply bg-slate-50 text-slate-900 selection:bg-blue-500/20 antialiased;
+  }
+  
+  /* Apply when <html class="dark"> is present */
+  .dark body {
+    /* Dark Mode */
+    @apply bg-[#030712] text-slate-200 selection:bg-blue-500/30;
+  }
+}
+
+/* 2. Custom Scrollbar */
+/* Stylish thin scrollbars that fit the enterprise look */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-800 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-700;
+}
+
+/* 3. Glassmorphism Effect */
+/* Used for sidebars and floating panels */
+.glass {
+  @apply backdrop-blur-md border border-white/10;
+  background: rgba(255, 255, 255, 0.7); /* Light mode glass */
+}
+
+.dark .glass {
+  background: rgba(17, 24, 39, 0.7); /* Dark mode glass */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 4. Utilities for Card Containers */
+@layer components {
+  .dashboard-card {
+    @apply p-6 rounded-2xl border transition-all shadow-sm;
+    @apply bg-white border-slate-200 text-slate-900;
+    @apply dark:bg-[#111827] dark:border-slate-800 dark:text-white dark:shadow-none;
+  }
+}
